@@ -22,10 +22,10 @@ namespace QLVT_DE3
         public static String servername = "";
         public static String username;
         public static String password;
-        public static String database = "QLVT";
+        public static String database = "QLVT_DATHANG";
         public static String mlogin;
         public static String remotelogin = "HTKN";
-        public static String remotepassword = "123456";
+        public static String remotepassword = "123";
         public static String mloginDN = "";
         public static String passwordDN = "";
 

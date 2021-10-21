@@ -71,6 +71,7 @@ namespace QLVT_DE3
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTrangThaiXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl_nhanvien = new DevExpress.XtraEditors.GroupControl();
+            this.TextEdit_manv = new DevExpress.XtraEditors.TextEdit();
             this.CheckBox_trangthaixoa = new System.Windows.Forms.CheckBox();
             this.TextEdit_macn = new DevExpress.XtraEditors.TextEdit();
             this.SpinEdit_luong = new DevExpress.XtraEditors.SpinEdit();
@@ -78,7 +79,6 @@ namespace QLVT_DE3
             this.TextEdit_diachi = new DevExpress.XtraEditors.TextEdit();
             this.TextEdit_ten = new DevExpress.XtraEditors.TextEdit();
             this.TextEdit_ho = new DevExpress.XtraEditors.TextEdit();
-            this.TextEdit_manv = new DevExpress.XtraEditors.TextEdit();
             mANVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -96,12 +96,12 @@ namespace QLVT_DE3
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl_nhanvien)).BeginInit();
             this.groupControl_nhanvien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_manv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_macn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpinEdit_luong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_diachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_ten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_ho.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_manv.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mANVLabel
@@ -506,6 +506,15 @@ namespace QLVT_DE3
             this.groupControl_nhanvien.TabIndex = 7;
             this.groupControl_nhanvien.Text = "Thông tin nhân viên";
             // 
+            // TextEdit_manv
+            // 
+            this.TextEdit_manv.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_nhanvien, "MANV", true));
+            this.TextEdit_manv.Location = new System.Drawing.Point(306, 48);
+            this.TextEdit_manv.MenuManager = this.barManager1;
+            this.TextEdit_manv.Name = "TextEdit_manv";
+            this.TextEdit_manv.Size = new System.Drawing.Size(115, 20);
+            this.TextEdit_manv.TabIndex = 17;
+            // 
             // CheckBox_trangthaixoa
             // 
             this.CheckBox_trangthaixoa.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bds_nhanvien, "TrangThaiXoa", true));
@@ -577,15 +586,6 @@ namespace QLVT_DE3
             this.TextEdit_ho.Size = new System.Drawing.Size(130, 20);
             this.TextEdit_ho.TabIndex = 3;
             // 
-            // TextEdit_manv
-            // 
-            this.TextEdit_manv.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_nhanvien, "MANV", true));
-            this.TextEdit_manv.Location = new System.Drawing.Point(306, 48);
-            this.TextEdit_manv.MenuManager = this.barManager1;
-            this.TextEdit_manv.Name = "TextEdit_manv";
-            this.TextEdit_manv.Size = new System.Drawing.Size(115, 20);
-            this.TextEdit_manv.TabIndex = 17;
-            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,12 +613,12 @@ namespace QLVT_DE3
             ((System.ComponentModel.ISupportInitialize)(this.groupControl_nhanvien)).EndInit();
             this.groupControl_nhanvien.ResumeLayout(false);
             this.groupControl_nhanvien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_manv.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_macn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpinEdit_luong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_diachi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_ten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_ho.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_manv.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
