@@ -80,6 +80,7 @@ namespace QLVT_DE3
             btn_luu.Enabled = btn_undo.Enabled = TextEdit_manv.Enabled = TextEdit_ho.Enabled = TextEdit_ten.Enabled = true;
             TextEdit_diachi.Enabled = true;
             bds_nhanvien.AddNew();
+            
             this.TextEdit_macn.EditValue = maCN;
         }
 
@@ -94,7 +95,6 @@ namespace QLVT_DE3
             {
                 try
                 {
-
                     bds_nhanvien.RemoveCurrent();
                     this.TableAdapter_nhanvien.Connection.ConnectionString = Program.connstr;
                     this.TableAdapter_nhanvien.Update(this.DS_QLVT.NHANVIEN);
