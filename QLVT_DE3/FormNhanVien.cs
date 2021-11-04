@@ -91,7 +91,7 @@ namespace QLVT_DE3
                 XtraMessageBox.Show("Không thể xóa lớp này vì Lớp đã có sinh viên.", "", MessageBoxButtons.OK);
                 return;
             }*/
-            if (XtraMessageBox.Show("Bạn có thực sự muốn xóa Lớp này??", "Xác nhận.", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (XtraMessageBox.Show("Bạn có thực sự muốn xóa nhân viên này??", "Xác nhận.", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
@@ -130,7 +130,8 @@ namespace QLVT_DE3
             groupControl_nhanvien.Enabled = true;
             btn_luu.Enabled = btn_undo.Enabled = TextEdit_manv.Enabled = TextEdit_ho.Enabled = TextEdit_ten.Enabled = true;
             TextEdit_diachi.Enabled = true;
-            TextEdit_manv.Enabled = false;
+            ////đặt mã kho true nhưng sau đó lại false :)))
+            TextEdit_manv.Enabled = TextEdit_macn.Enabled = false;
         }
 
         private void luu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -147,6 +148,13 @@ namespace QLVT_DE3
                 TextEdit_ho.Focus();
                 return;
             }
+            if (SpinEdit_luong.Text.Trim() == "")
+            {
+                MessageBox.Show("Họ không được để trống!", "", MessageBoxButtons.OK);
+                TextEdit_ho.Focus();
+                return;
+            }
+
 
             if (TextEdit_ten.Text.Trim() == "")
             {

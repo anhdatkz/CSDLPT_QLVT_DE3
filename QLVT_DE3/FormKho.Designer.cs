@@ -34,8 +34,8 @@ namespace QLVT_DE3
             System.Windows.Forms.Label tENKHOLabel;
             System.Windows.Forms.Label dIACHILabel;
             System.Windows.Forms.Label mACNLabel;
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.barManagerKho = new DevExpress.XtraBars.BarManager(this.components);
+            this.barKho = new DevExpress.XtraBars.Bar();
             this.btn_them = new DevExpress.XtraBars.BarButtonItem();
             this.btn_xoa = new DevExpress.XtraBars.BarButtonItem();
             this.btn_sua = new DevExpress.XtraBars.BarButtonItem();
@@ -48,7 +48,7 @@ namespace QLVT_DE3
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.groupControl_chinhanh = new DevExpress.XtraEditors.GroupControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxChinNhanh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DS_QLVT = new QLVT_DE3.DS_QLVT();
             this.khoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,15 +61,15 @@ namespace QLVT_DE3
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl_kho = new DevExpress.XtraEditors.GroupControl();
-            this.TextEdit_makho = new DevExpress.XtraEditors.TextEdit();
-            this.TextEdit_tenkho = new DevExpress.XtraEditors.TextEdit();
-            this.TextEdit_diachi = new DevExpress.XtraEditors.TextEdit();
             this.TextEdit_macn = new DevExpress.XtraEditors.TextEdit();
+            this.TextEdit_diachi = new DevExpress.XtraEditors.TextEdit();
+            this.TextEdit_tenkho = new DevExpress.XtraEditors.TextEdit();
+            this.TextEdit_makho = new DevExpress.XtraEditors.TextEdit();
             mAKHOLabel = new System.Windows.Forms.Label();
             tENKHOLabel = new System.Windows.Forms.Label();
             dIACHILabel = new System.Windows.Forms.Label();
             mACNLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl_chinhanh)).BeginInit();
             this.groupControl_chinhanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DS_QLVT)).BeginInit();
@@ -78,22 +78,58 @@ namespace QLVT_DE3
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl_kho)).BeginInit();
             this.groupControl_kho.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_makho.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_tenkho.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_diachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_macn.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_diachi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_tenkho.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_makho.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // barManager1
+            // mAKHOLabel
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            mAKHOLabel.AutoSize = true;
+            mAKHOLabel.Location = new System.Drawing.Point(232, 45);
+            mAKHOLabel.Name = "mAKHOLabel";
+            mAKHOLabel.Size = new System.Drawing.Size(41, 13);
+            mAKHOLabel.TabIndex = 0;
+            mAKHOLabel.Text = "Mã kho";
+            // 
+            // tENKHOLabel
+            // 
+            tENKHOLabel.AutoSize = true;
+            tENKHOLabel.Location = new System.Drawing.Point(415, 45);
+            tENKHOLabel.Name = "tENKHOLabel";
+            tENKHOLabel.Size = new System.Drawing.Size(45, 13);
+            tENKHOLabel.TabIndex = 2;
+            tENKHOLabel.Text = "Tên kho";
+            // 
+            // dIACHILabel
+            // 
+            dIACHILabel.AutoSize = true;
+            dIACHILabel.Location = new System.Drawing.Point(232, 85);
+            dIACHILabel.Name = "dIACHILabel";
+            dIACHILabel.Size = new System.Drawing.Size(39, 13);
+            dIACHILabel.TabIndex = 4;
+            dIACHILabel.Text = "Địa chỉ";
+            // 
+            // mACNLabel
+            // 
+            mACNLabel.AutoSize = true;
+            mACNLabel.Location = new System.Drawing.Point(657, 45);
+            mACNLabel.Name = "mACNLabel";
+            mACNLabel.Size = new System.Drawing.Size(38, 13);
+            mACNLabel.TabIndex = 6;
+            mACNLabel.Text = "Mã CN";
+            // 
+            // barManagerKho
+            // 
+            this.barManagerKho.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.barKho});
+            this.barManagerKho.DockControls.Add(this.barDockControlTop);
+            this.barManagerKho.DockControls.Add(this.barDockControlBottom);
+            this.barManagerKho.DockControls.Add(this.barDockControlLeft);
+            this.barManagerKho.DockControls.Add(this.barDockControlRight);
+            this.barManagerKho.Form = this;
+            this.barManagerKho.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btn_them,
             this.btn_xoa,
             this.btn_sua,
@@ -101,16 +137,16 @@ namespace QLVT_DE3
             this.btn_undo,
             this.btn_reload,
             this.btn_thoat});
-            this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
+            this.barManagerKho.MainMenu = this.barKho;
+            this.barManagerKho.MaxItemId = 7;
             // 
-            // bar2
+            // barKho
             // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.barKho.BarName = "Main menu";
+            this.barKho.DockCol = 0;
+            this.barKho.DockRow = 0;
+            this.barKho.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.barKho.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_them, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_xoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_sua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -118,9 +154,9 @@ namespace QLVT_DE3
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_undo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_reload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_thoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
+            this.barKho.OptionsBar.MultiLine = true;
+            this.barKho.OptionsBar.UseWholeRow = true;
+            this.barKho.Text = "Main menu";
             // 
             // btn_them
             // 
@@ -129,6 +165,7 @@ namespace QLVT_DE3
             this.btn_them.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.add_16x162;
             this.btn_them.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.add_32x322;
             this.btn_them.Name = "btn_them";
+            this.btn_them.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_them_ItemClick);
             // 
             // btn_xoa
             // 
@@ -137,6 +174,7 @@ namespace QLVT_DE3
             this.btn_xoa.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.remove_16x162;
             this.btn_xoa.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.remove_32x322;
             this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_xoa_ItemClick);
             // 
             // btn_sua
             // 
@@ -145,6 +183,7 @@ namespace QLVT_DE3
             this.btn_sua.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.editname_16x162;
             this.btn_sua.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.editname_32x322;
             this.btn_sua.Name = "btn_sua";
+            this.btn_sua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_sua_ItemClick);
             // 
             // btn_luu
             // 
@@ -153,6 +192,7 @@ namespace QLVT_DE3
             this.btn_luu.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.saveto_16x161;
             this.btn_luu.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.saveto_32x321;
             this.btn_luu.Name = "btn_luu";
+            this.btn_luu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_luu_ItemClick);
             // 
             // btn_undo
             // 
@@ -161,6 +201,7 @@ namespace QLVT_DE3
             this.btn_undo.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.reset_16x162;
             this.btn_undo.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.reset_32x322;
             this.btn_undo.Name = "btn_undo";
+            this.btn_undo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_undo_ItemClick);
             // 
             // btn_reload
             // 
@@ -169,6 +210,7 @@ namespace QLVT_DE3
             this.btn_reload.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.refresh_16x162;
             this.btn_reload.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.refresh_32x322;
             this.btn_reload.Name = "btn_reload";
+            this.btn_reload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_reload_ItemClick);
             // 
             // btn_thoat
             // 
@@ -177,13 +219,14 @@ namespace QLVT_DE3
             this.btn_thoat.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.cancel_16x162;
             this.btn_thoat.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.cancel_32x322;
             this.btn_thoat.Name = "btn_thoat";
+            this.btn_thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_thoat_ItemClick);
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Manager = this.barManagerKho;
             this.barDockControlTop.Size = new System.Drawing.Size(1076, 24);
             // 
             // barDockControlBottom
@@ -191,7 +234,7 @@ namespace QLVT_DE3
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 475);
-            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Manager = this.barManagerKho;
             this.barDockControlBottom.Size = new System.Drawing.Size(1076, 0);
             // 
             // barDockControlLeft
@@ -199,7 +242,7 @@ namespace QLVT_DE3
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Manager = this.barManagerKho;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 451);
             // 
             // barDockControlRight
@@ -207,12 +250,12 @@ namespace QLVT_DE3
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1076, 24);
-            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Manager = this.barManagerKho;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 451);
             // 
             // groupControl_chinhanh
             // 
-            this.groupControl_chinhanh.Controls.Add(this.comboBox1);
+            this.groupControl_chinhanh.Controls.Add(this.comboBoxChinNhanh);
             this.groupControl_chinhanh.Controls.Add(this.label1);
             this.groupControl_chinhanh.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl_chinhanh.Location = new System.Drawing.Point(0, 24);
@@ -221,14 +264,14 @@ namespace QLVT_DE3
             this.groupControl_chinhanh.TabIndex = 4;
             this.groupControl_chinhanh.Text = "Chi nhánh";
             // 
-            // comboBox1
+            // comboBoxChinNhanh
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(274, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(516, 25);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxChinNhanh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxChinNhanh.FormattingEnabled = true;
+            this.comboBoxChinNhanh.Location = new System.Drawing.Point(274, 24);
+            this.comboBoxChinNhanh.Name = "comboBoxChinNhanh";
+            this.comboBoxChinNhanh.Size = new System.Drawing.Size(516, 25);
+            this.comboBoxChinNhanh.TabIndex = 1;
             // 
             // label1
             // 
@@ -275,7 +318,7 @@ namespace QLVT_DE3
             this.khoGridControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.khoGridControl.Location = new System.Drawing.Point(0, 79);
             this.khoGridControl.MainView = this.gridView1;
-            this.khoGridControl.MenuManager = this.barManager1;
+            this.khoGridControl.MenuManager = this.barManagerKho;
             this.khoGridControl.Name = "khoGridControl";
             this.khoGridControl.Size = new System.Drawing.Size(1076, 220);
             this.khoGridControl.TabIndex = 16;
@@ -341,77 +384,41 @@ namespace QLVT_DE3
             this.groupControl_kho.TabIndex = 21;
             this.groupControl_kho.Text = "Thông tin kho";
             // 
-            // mAKHOLabel
+            // TextEdit_macn
             // 
-            mAKHOLabel.AutoSize = true;
-            mAKHOLabel.Location = new System.Drawing.Point(232, 45);
-            mAKHOLabel.Name = "mAKHOLabel";
-            mAKHOLabel.Size = new System.Drawing.Size(41, 13);
-            mAKHOLabel.TabIndex = 0;
-            mAKHOLabel.Text = "Mã kho";
-            // 
-            // TextEdit_makho
-            // 
-            this.TextEdit_makho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "MAKHO", true));
-            this.TextEdit_makho.Location = new System.Drawing.Point(285, 42);
-            this.TextEdit_makho.MenuManager = this.barManager1;
-            this.TextEdit_makho.Name = "TextEdit_makho";
-            this.TextEdit_makho.Size = new System.Drawing.Size(100, 20);
-            this.TextEdit_makho.TabIndex = 1;
-            // 
-            // tENKHOLabel
-            // 
-            tENKHOLabel.AutoSize = true;
-            tENKHOLabel.Location = new System.Drawing.Point(415, 45);
-            tENKHOLabel.Name = "tENKHOLabel";
-            tENKHOLabel.Size = new System.Drawing.Size(45, 13);
-            tENKHOLabel.TabIndex = 2;
-            tENKHOLabel.Text = "Tên kho";
-            // 
-            // TextEdit_tenkho
-            // 
-            this.TextEdit_tenkho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "TENKHO", true));
-            this.TextEdit_tenkho.Location = new System.Drawing.Point(472, 42);
-            this.TextEdit_tenkho.MenuManager = this.barManager1;
-            this.TextEdit_tenkho.Name = "TextEdit_tenkho";
-            this.TextEdit_tenkho.Size = new System.Drawing.Size(168, 20);
-            this.TextEdit_tenkho.TabIndex = 3;
-            // 
-            // dIACHILabel
-            // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(232, 85);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(39, 13);
-            dIACHILabel.TabIndex = 4;
-            dIACHILabel.Text = "Địa chỉ";
+            this.TextEdit_macn.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "MACN", true));
+            this.TextEdit_macn.Location = new System.Drawing.Point(703, 42);
+            this.TextEdit_macn.MenuManager = this.barManagerKho;
+            this.TextEdit_macn.Name = "TextEdit_macn";
+            this.TextEdit_macn.Size = new System.Drawing.Size(100, 20);
+            this.TextEdit_macn.TabIndex = 7;
             // 
             // TextEdit_diachi
             // 
             this.TextEdit_diachi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "DIACHI", true));
             this.TextEdit_diachi.Location = new System.Drawing.Point(285, 82);
-            this.TextEdit_diachi.MenuManager = this.barManager1;
+            this.TextEdit_diachi.MenuManager = this.barManagerKho;
             this.TextEdit_diachi.Name = "TextEdit_diachi";
             this.TextEdit_diachi.Size = new System.Drawing.Size(518, 20);
             this.TextEdit_diachi.TabIndex = 5;
             // 
-            // mACNLabel
+            // TextEdit_tenkho
             // 
-            mACNLabel.AutoSize = true;
-            mACNLabel.Location = new System.Drawing.Point(657, 45);
-            mACNLabel.Name = "mACNLabel";
-            mACNLabel.Size = new System.Drawing.Size(38, 13);
-            mACNLabel.TabIndex = 6;
-            mACNLabel.Text = "Mã CN";
+            this.TextEdit_tenkho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "TENKHO", true));
+            this.TextEdit_tenkho.Location = new System.Drawing.Point(472, 42);
+            this.TextEdit_tenkho.MenuManager = this.barManagerKho;
+            this.TextEdit_tenkho.Name = "TextEdit_tenkho";
+            this.TextEdit_tenkho.Size = new System.Drawing.Size(168, 20);
+            this.TextEdit_tenkho.TabIndex = 3;
             // 
-            // TextEdit_macn
+            // TextEdit_makho
             // 
-            this.TextEdit_macn.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "MACN", true));
-            this.TextEdit_macn.Location = new System.Drawing.Point(703, 42);
-            this.TextEdit_macn.MenuManager = this.barManager1;
-            this.TextEdit_macn.Name = "TextEdit_macn";
-            this.TextEdit_macn.Size = new System.Drawing.Size(100, 20);
-            this.TextEdit_macn.TabIndex = 7;
+            this.TextEdit_makho.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.khoBindingSource, "MAKHO", true));
+            this.TextEdit_makho.Location = new System.Drawing.Point(285, 42);
+            this.TextEdit_makho.MenuManager = this.barManagerKho;
+            this.TextEdit_makho.Name = "TextEdit_makho";
+            this.TextEdit_makho.Size = new System.Drawing.Size(100, 20);
+            this.TextEdit_makho.TabIndex = 1;
             // 
             // FormKho
             // 
@@ -428,7 +435,7 @@ namespace QLVT_DE3
             this.Name = "FormKho";
             this.Text = "FormKho";
             this.Load += new System.EventHandler(this.FormKho_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl_chinhanh)).EndInit();
             this.groupControl_chinhanh.ResumeLayout(false);
             this.groupControl_chinhanh.PerformLayout();
@@ -439,10 +446,10 @@ namespace QLVT_DE3
             ((System.ComponentModel.ISupportInitialize)(this.groupControl_kho)).EndInit();
             this.groupControl_kho.ResumeLayout(false);
             this.groupControl_kho.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_makho.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_tenkho.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_diachi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEdit_macn.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_diachi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_tenkho.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEdit_makho.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,8 +457,8 @@ namespace QLVT_DE3
 
         #endregion
 
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.BarManager barManagerKho;
+        private DevExpress.XtraBars.Bar barKho;
         private DevExpress.XtraBars.BarButtonItem btn_them;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -464,7 +471,7 @@ namespace QLVT_DE3
         private DevExpress.XtraBars.BarButtonItem btn_reload;
         private DevExpress.XtraBars.BarButtonItem btn_thoat;
         private DevExpress.XtraEditors.GroupControl groupControl_chinhanh;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxChinNhanh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource khoBindingSource;
         private DS_QLVT DS_QLVT;
