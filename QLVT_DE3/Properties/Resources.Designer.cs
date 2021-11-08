@@ -143,26 +143,6 @@ namespace QLVT_DE3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap additem_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("additem_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap additem_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("additem_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap assignto_16x16 {
             get {
                 object obj = ResourceManager.GetObject("assignto_16x16", resourceCulture);
@@ -383,16 +363,6 @@ namespace QLVT_DE3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cancel_16x163 {
-            get {
-                object obj = ResourceManager.GetObject("cancel_16x163", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cancel_32x32 {
             get {
                 object obj = ResourceManager.GetObject("cancel_32x32", resourceCulture);
@@ -416,16 +386,6 @@ namespace QLVT_DE3.Properties {
         internal static System.Drawing.Bitmap cancel_32x322 {
             get {
                 object obj = ResourceManager.GetObject("cancel_32x322", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cancel_32x323 {
-            get {
-                object obj = ResourceManager.GetObject("cancel_32x323", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -666,26 +626,6 @@ namespace QLVT_DE3.Properties {
         internal static System.Drawing.Bitmap insert_32x32 {
             get {
                 object obj = ResourceManager.GetObject("insert_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap new_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("new_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap new_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("new_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
