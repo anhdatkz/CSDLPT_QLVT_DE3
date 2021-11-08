@@ -29,6 +29,7 @@ namespace QLVT_DE3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTaoTaiKhoan));
             this.checkBox_show = new System.Windows.Forms.CheckBox();
             this.button_taoTK = new System.Windows.Forms.Button();
@@ -44,7 +45,13 @@ namespace QLVT_DE3
             this.button1 = new System.Windows.Forms.Button();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textBox_username = new System.Windows.Forms.TextBox();
+            this.DS_QLVT = new QLVT_DE3.DS_QLVT();
+            this.BDS_DSNV = new System.Windows.Forms.BindingSource(this.components);
+            this.DSNVTableAdapter = new QLVT_DE3.DS_QLVTTableAdapters.DSNVTableAdapter();
+            this.tableAdapterManager = new QLVT_DE3.DS_QLVTTableAdapters.TableAdapterManager();
             this.comboBox_username = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QLVT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BDS_DSNV)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox_show
@@ -57,6 +64,7 @@ namespace QLVT_DE3
             this.checkBox_show.TabIndex = 27;
             this.checkBox_show.Text = "Show";
             this.checkBox_show.UseVisualStyleBackColor = true;
+            this.checkBox_show.CheckedChanged += new System.EventHandler(this.checkBox_show_CheckedChanged);
             // 
             // button_taoTK
             // 
@@ -67,6 +75,7 @@ namespace QLVT_DE3
             this.button_taoTK.TabIndex = 26;
             this.button_taoTK.Text = "Tạo Tài khoản";
             this.button_taoTK.UseVisualStyleBackColor = true;
+            this.button_taoTK.Click += new System.EventHandler(this.button_taoTK_Click);
             // 
             // radioButton_user
             // 
@@ -170,6 +179,7 @@ namespace QLVT_DE3
             this.button1.TabIndex = 28;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelControl1
             // 
@@ -190,15 +200,48 @@ namespace QLVT_DE3
             this.textBox_username.Size = new System.Drawing.Size(46, 25);
             this.textBox_username.TabIndex = 30;
             // 
+            // DS_QLVT
+            // 
+            this.DS_QLVT.DataSetName = "DS_QLVT";
+            this.DS_QLVT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // BDS_DSNV
+            // 
+            this.BDS_DSNV.DataMember = "DSNV";
+            this.BDS_DSNV.DataSource = this.DS_QLVT;
+            // 
+            // DSNVTableAdapter
+            // 
+            this.DSNVTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChiNhanhTableAdapter = null;
+            this.tableAdapterManager.CTDDHTableAdapter = null;
+            this.tableAdapterManager.CTPNTableAdapter = null;
+            this.tableAdapterManager.CTPXTableAdapter = null;
+            this.tableAdapterManager.DATHANGTableAdapter = null;
+            this.tableAdapterManager.DSNVTableAdapter = this.DSNVTableAdapter;
+            this.tableAdapterManager.KhoTableAdapter = null;
+            this.tableAdapterManager.NHANVIENTableAdapter = null;
+            this.tableAdapterManager.PHIEUNHAPTableAdapter = null;
+            this.tableAdapterManager.PHIEUXUATTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLVT_DE3.DS_QLVTTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VattuTableAdapter = null;
+            // 
             // comboBox_username
             // 
+            this.comboBox_username.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BDS_DSNV, "HOTEN", true));
+            this.comboBox_username.DataSource = this.BDS_DSNV;
+            this.comboBox_username.DisplayMember = "HOTEN";
             this.comboBox_username.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_username.FormattingEnabled = true;
             this.comboBox_username.Location = new System.Drawing.Point(304, 257);
             this.comboBox_username.Name = "comboBox_username";
-            this.comboBox_username.Size = new System.Drawing.Size(289, 26);
-            this.comboBox_username.TabIndex = 31;
+            this.comboBox_username.Size = new System.Drawing.Size(289, 21);
+            this.comboBox_username.TabIndex = 32;
+            this.comboBox_username.ValueMember = "MANV";
             // 
             // FormTaoTaiKhoan
             // 
@@ -222,6 +265,9 @@ namespace QLVT_DE3
             this.Controls.Add(this.Label_login);
             this.Name = "FormTaoTaiKhoan";
             this.Text = "FormTaoTaiKhoan";
+            this.Load += new System.EventHandler(this.FormTaoTaiKhoan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QLVT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BDS_DSNV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +289,10 @@ namespace QLVT_DE3
         private System.Windows.Forms.Button button1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox textBox_username;
+        private DS_QLVT DS_QLVT;
+        private System.Windows.Forms.BindingSource BDS_DSNV;
+        private DS_QLVTTableAdapters.DSNVTableAdapter DSNVTableAdapter;
+        private DS_QLVTTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox comboBox_username;
     }
 }
