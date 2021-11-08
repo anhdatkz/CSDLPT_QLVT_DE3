@@ -29,6 +29,7 @@ namespace QLVT_DE3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTaoTaiKhoan));
             this.checkBox_show = new System.Windows.Forms.CheckBox();
             this.button_taoTK = new System.Windows.Forms.Button();
@@ -41,10 +42,16 @@ namespace QLVT_DE3
             this.label_password = new DevExpress.XtraEditors.LabelControl();
             this.textBox_loginname = new System.Windows.Forms.TextBox();
             this.Label_login = new DevExpress.XtraEditors.LabelControl();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_thoat = new System.Windows.Forms.Button();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textBox_username = new System.Windows.Forms.TextBox();
-            this.comboBox_username = new System.Windows.Forms.ComboBox();
+            this.DS_QLVT = new QLVT_DE3.DS_QLVT();
+            this.BDS_DSNV = new System.Windows.Forms.BindingSource(this.components);
+            this.DSNVTableAdapter = new QLVT_DE3.DS_QLVTTableAdapters.DSNVTableAdapter();
+            this.tableAdapterManager = new QLVT_DE3.DS_QLVTTableAdapters.TableAdapterManager();
+            this.ComboBox_manv = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QLVT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BDS_DSNV)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox_show
@@ -57,6 +64,7 @@ namespace QLVT_DE3
             this.checkBox_show.TabIndex = 27;
             this.checkBox_show.Text = "Show";
             this.checkBox_show.UseVisualStyleBackColor = true;
+            this.checkBox_show.CheckedChanged += new System.EventHandler(this.checkBox_show_CheckedChanged);
             // 
             // button_taoTK
             // 
@@ -67,6 +75,7 @@ namespace QLVT_DE3
             this.button_taoTK.TabIndex = 26;
             this.button_taoTK.Text = "Tạo Tài khoản";
             this.button_taoTK.UseVisualStyleBackColor = true;
+            this.button_taoTK.Click += new System.EventHandler(this.button_taoTK_Click);
             // 
             // radioButton_user
             // 
@@ -161,15 +170,16 @@ namespace QLVT_DE3
             this.Label_login.TabIndex = 15;
             this.Label_login.Text = "Login Name:";
             // 
-            // button1
+            // button_thoat
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(478, 367);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 30);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Thoát";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_thoat.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_thoat.Location = new System.Drawing.Point(478, 367);
+            this.button_thoat.Name = "button_thoat";
+            this.button_thoat.Size = new System.Drawing.Size(115, 30);
+            this.button_thoat.TabIndex = 28;
+            this.button_thoat.Text = "Thoát";
+            this.button_thoat.UseVisualStyleBackColor = true;
+            this.button_thoat.Click += new System.EventHandler(this.button_thoat_Click);
             // 
             // labelControl1
             // 
@@ -190,25 +200,59 @@ namespace QLVT_DE3
             this.textBox_username.Size = new System.Drawing.Size(46, 25);
             this.textBox_username.TabIndex = 30;
             // 
-            // comboBox_username
+            // DS_QLVT
             // 
-            this.comboBox_username.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_username.FormattingEnabled = true;
-            this.comboBox_username.Location = new System.Drawing.Point(304, 257);
-            this.comboBox_username.Name = "comboBox_username";
-            this.comboBox_username.Size = new System.Drawing.Size(289, 26);
-            this.comboBox_username.TabIndex = 31;
+            this.DS_QLVT.DataSetName = "DS_QLVT";
+            this.DS_QLVT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // BDS_DSNV
+            // 
+            this.BDS_DSNV.DataMember = "DSNV";
+            this.BDS_DSNV.DataSource = this.DS_QLVT;
+            // 
+            // DSNVTableAdapter
+            // 
+            this.DSNVTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChiNhanhTableAdapter = null;
+            this.tableAdapterManager.CTDDHTableAdapter = null;
+            this.tableAdapterManager.CTPNTableAdapter = null;
+            this.tableAdapterManager.CTPXTableAdapter = null;
+            this.tableAdapterManager.DATHANGTableAdapter = null;
+            this.tableAdapterManager.DSNVTableAdapter = this.DSNVTableAdapter;
+            this.tableAdapterManager.KhoTableAdapter = null;
+            this.tableAdapterManager.NHANVIENTableAdapter = null;
+            this.tableAdapterManager.PHIEUNHAPTableAdapter = null;
+            this.tableAdapterManager.PHIEUXUATTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLVT_DE3.DS_QLVTTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VattuTableAdapter = null;
+            // 
+            // ComboBox_manv
+            // 
+            this.ComboBox_manv.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BDS_DSNV, "HOTEN", true));
+            this.ComboBox_manv.DataSource = this.BDS_DSNV;
+            this.ComboBox_manv.DisplayMember = "HOTEN";
+            this.ComboBox_manv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBox_manv.FormattingEnabled = true;
+            this.ComboBox_manv.Location = new System.Drawing.Point(304, 258);
+            this.ComboBox_manv.Name = "ComboBox_manv";
+            this.ComboBox_manv.Size = new System.Drawing.Size(289, 21);
+            this.ComboBox_manv.TabIndex = 32;
+            this.ComboBox_manv.ValueMember = "MANV";
+            this.ComboBox_manv.SelectedIndexChanged += new System.EventHandler(this.ComboBox_manv_SelectedIndexChanged);
             // 
             // FormTaoTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox_username);
+            this.Controls.Add(this.ComboBox_manv);
             this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_thoat);
             this.Controls.Add(this.checkBox_show);
             this.Controls.Add(this.button_taoTK);
             this.Controls.Add(this.radioButton_user);
@@ -222,6 +266,9 @@ namespace QLVT_DE3
             this.Controls.Add(this.Label_login);
             this.Name = "FormTaoTaiKhoan";
             this.Text = "FormTaoTaiKhoan";
+            this.Load += new System.EventHandler(this.FormTaoTaiKhoan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QLVT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BDS_DSNV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,9 +287,13 @@ namespace QLVT_DE3
         private DevExpress.XtraEditors.LabelControl label_password;
         private System.Windows.Forms.TextBox textBox_loginname;
         private DevExpress.XtraEditors.LabelControl Label_login;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_thoat;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox textBox_username;
-        private System.Windows.Forms.ComboBox comboBox_username;
+        private DS_QLVT DS_QLVT;
+        private System.Windows.Forms.BindingSource BDS_DSNV;
+        private DS_QLVTTableAdapters.DSNVTableAdapter DSNVTableAdapter;
+        private DS_QLVTTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ComboBox ComboBox_manv;
     }
 }
