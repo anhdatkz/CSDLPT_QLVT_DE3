@@ -66,6 +66,7 @@ namespace QLVT_DE3.Report
             this.tableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrLabel_chinhanh = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -163,8 +164,9 @@ namespace QLVT_DE3.Report
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel_chinhanh,
             this.label1});
-            this.ReportHeader.HeightF = 60F;
+            this.ReportHeader.HeightF = 83.95834F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // label1
@@ -393,6 +395,15 @@ namespace QLVT_DE3.Report
             this.tableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell16.Weight = 0.15835993805345419D;
             // 
+            // xrLabel_chinhanh
+            // 
+            this.xrLabel_chinhanh.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 47.90268F);
+            this.xrLabel_chinhanh.Multiline = true;
+            this.xrLabel_chinhanh.Name = "xrLabel_chinhanh";
+            this.xrLabel_chinhanh.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel_chinhanh.SizeF = new System.Drawing.SizeF(487.12F, 23F);
+            this.xrLabel_chinhanh.Text = "Tên chi nhánh";
+            // 
             // Report_DSNV
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -455,5 +466,6 @@ namespace QLVT_DE3.Report
         private DevExpress.XtraReports.UI.XRTableCell tableCell14;
         private DevExpress.XtraReports.UI.XRTableCell tableCell15;
         private DevExpress.XtraReports.UI.XRTableCell tableCell16;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel_chinhanh;
     }
 }

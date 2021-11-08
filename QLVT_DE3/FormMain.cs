@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using QLVT_DE3.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -142,5 +144,24 @@ namespace QLVT_DE3
         }
 
 
+        //============================== REPORT ====================================
+        private void btn_dsnv_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(Report.Form_Report_DSNV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Report.Form_Report_DSNV f = new Report.Form_Report_DSNV();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btn_dsvt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Report_DSVT report = new Report_DSVT();
+            ReportPrintTool print = new ReportPrintTool(report);
+            print.ShowPreviewDialog();
+        }
     }
 }

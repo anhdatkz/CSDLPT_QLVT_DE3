@@ -154,6 +154,7 @@ namespace QLVT_DE3
             this.btn_dsnv.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.groupheader_16x16;
             this.btn_dsnv.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.groupheader_32x32;
             this.btn_dsnv.Name = "btn_dsnv";
+            this.btn_dsnv.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_dsnv_ItemClick);
             // 
             // btn_dsvt
             // 
@@ -162,6 +163,7 @@ namespace QLVT_DE3
             this.btn_dsvt.ImageOptions.Image = global::QLVT_DE3.Properties.Resources.boorderitem_16x16;
             this.btn_dsvt.ImageOptions.LargeImage = global::QLVT_DE3.Properties.Resources.boorderitem_32x32;
             this.btn_dsvt.Name = "btn_dsvt";
+            this.btn_dsvt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_dsvt_ItemClick);
             // 
             // btn_ctvt
             // 
