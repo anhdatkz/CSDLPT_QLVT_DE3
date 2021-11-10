@@ -29,11 +29,21 @@ namespace QLVT_DE3.Report
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox_chinhanh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_in = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
+            this.DS_QLVT = new QLVT_DE3.DS_QLVT();
+            this.chiNhanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chiNhanhTableAdapter = new QLVT_DE3.DS_QLVTTableAdapters.ChiNhanhTableAdapter();
+            this.tableAdapterManager = new QLVT_DE3.DS_QLVTTableAdapters.TableAdapterManager();
+            this.bds_nhanvien = new System.Windows.Forms.BindingSource(this.components);
+            this.TableAdapter_nhanvien = new QLVT_DE3.DS_QLVTTableAdapters.NHANVIENTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QLVT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_nhanvien)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox_chinhanh
@@ -45,6 +55,7 @@ namespace QLVT_DE3.Report
             this.comboBox_chinhanh.Name = "comboBox_chinhanh";
             this.comboBox_chinhanh.Size = new System.Drawing.Size(443, 25);
             this.comboBox_chinhanh.TabIndex = 3;
+            this.comboBox_chinhanh.SelectedIndexChanged += new System.EventHandler(this.comboBox_chinhanh_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -75,6 +86,7 @@ namespace QLVT_DE3.Report
             this.btn_in.TabIndex = 5;
             this.btn_in.Text = "IN";
             this.btn_in.UseVisualStyleBackColor = true;
+            this.btn_in.Click += new System.EventHandler(this.btn_in_Click);
             // 
             // btn_thoat
             // 
@@ -85,8 +97,48 @@ namespace QLVT_DE3.Report
             this.btn_thoat.TabIndex = 6;
             this.btn_thoat.Text = "THOÁT";
             this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
-            // Report_DSNV
+            // DS_QLVT
+            // 
+            this.DS_QLVT.DataSetName = "DS_QLVT";
+            this.DS_QLVT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // chiNhanhBindingSource
+            // 
+            this.chiNhanhBindingSource.DataMember = "ChiNhanh";
+            this.chiNhanhBindingSource.DataSource = this.DS_QLVT;
+            // 
+            // chiNhanhTableAdapter
+            // 
+            this.chiNhanhTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ChiNhanhTableAdapter = this.chiNhanhTableAdapter;
+            this.tableAdapterManager.CTDDHTableAdapter = null;
+            this.tableAdapterManager.CTPNTableAdapter = null;
+            this.tableAdapterManager.CTPXTableAdapter = null;
+            this.tableAdapterManager.DATHANGTableAdapter = null;
+            this.tableAdapterManager.DSNVTableAdapter = null;
+            this.tableAdapterManager.KhoTableAdapter = null;
+            this.tableAdapterManager.NHANVIENTableAdapter = this.TableAdapter_nhanvien;
+            this.tableAdapterManager.PHIEUNHAPTableAdapter = null;
+            this.tableAdapterManager.PHIEUXUATTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLVT_DE3.DS_QLVTTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VattuTableAdapter = null;
+            // 
+            // bds_nhanvien
+            // 
+            this.bds_nhanvien.DataMember = "FK_NHANVIEN_ChiNhanh";
+            this.bds_nhanvien.DataSource = this.chiNhanhBindingSource;
+            // 
+            // TableAdapter_nhanvien
+            // 
+            this.TableAdapter_nhanvien.ClearBeforeFill = true;
+            // 
+            // Form_Report_DSNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,8 +148,12 @@ namespace QLVT_DE3.Report
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox_chinhanh);
             this.Controls.Add(this.label1);
-            this.Name = "Report_DSNV";
+            this.Name = "Form_Report_DSNV";
             this.Text = "Report_DSNV";
+            this.Load += new System.EventHandler(this.Form_Report_DSNV_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QLVT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiNhanhBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_nhanvien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +166,11 @@ namespace QLVT_DE3.Report
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_in;
         private System.Windows.Forms.Button btn_thoat;
+        private DS_QLVT DS_QLVT;
+        private System.Windows.Forms.BindingSource chiNhanhBindingSource;
+        private DS_QLVTTableAdapters.ChiNhanhTableAdapter chiNhanhTableAdapter;
+        private DS_QLVTTableAdapters.TableAdapterManager tableAdapterManager;
+        private DS_QLVTTableAdapters.NHANVIENTableAdapter TableAdapter_nhanvien;
+        private System.Windows.Forms.BindingSource bds_nhanvien;
     }
 }

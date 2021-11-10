@@ -11,6 +11,8 @@ namespace QLVT_DE3.Report
         public Report_DSNV()
         {
             InitializeComponent();
+            this.sqlDataSource1.Connection.ConnectionString = Program.connstr;
+            this.sqlDataSource1.Fill();
         }
 
     }
